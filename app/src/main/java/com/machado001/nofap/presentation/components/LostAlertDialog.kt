@@ -10,12 +10,13 @@ import androidx.compose.runtime.Composable
 @Composable
 inline fun LostAlertDialog(crossinline onClose: () -> Unit) {
     AlertDialog(
+        containerColor = MaterialTheme.colorScheme.surfaceContainer,
         onDismissRequest = { onClose() },
         confirmButton = {
             Button(
                 onClick = { /*TODO*/ },
                 colors = ButtonDefaults.buttonColors(
-                    MaterialTheme.colorScheme.errorContainer,
+                    MaterialTheme.colorScheme.onErrorContainer,
                     contentColor = MaterialTheme.colorScheme.onError
                 )
             ) { Text(text = "Reset") }
