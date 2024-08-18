@@ -27,4 +27,5 @@ main -> untoachable;
 develop -> we'll actually code here, only merging at main when we have a stable feature;
 
 feature/mainScreen -> related to NF-1
+
 feature/widget -> related to NF-2
