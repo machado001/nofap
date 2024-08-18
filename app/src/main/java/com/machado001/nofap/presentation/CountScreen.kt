@@ -33,6 +33,8 @@ import androidx.compose.ui.unit.sp
 import com.machado001.nofap.presentation.components.LostAlertDialog
 import com.machado001.nofap.presentation.theme.NoFapTheme
 import com.machado001.nofap.presentation.ui.callIntent
+import com.machado001.nofap.presentation.ui.formatted
+import kotlin.time.Duration.Companion.milliseconds
 
 
 @Composable
@@ -42,8 +44,13 @@ fun CountScreenRoot() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CountScreen(state: CountScreenUiState = CountScreenUiState(0, longestStreak = 54)) {
-
+fun CountScreen(
+    state: CountScreenUiState = CountScreenUiState(
+        0,
+        longestStreak = 54,
+        currentTime = 12345.milliseconds
+    )
+) {
     val context = LocalContext.current
 
     var showDialog by remember { mutableStateOf(false) }
@@ -59,9 +66,7 @@ fun CountScreen(state: CountScreenUiState = CountScreenUiState(0, longestStreak 
             TopAppBar(
                 title = { Text("No Fap!") },
                 actions = {
-                    IconButton(onClick = {
-                        callIntent(context, state)
-                    }) {
+                    IconButton(onClick = { callIntent(context, state) }) {
                         Icon(Icons.Filled.Share, null)
                     }
                 }
@@ -99,7 +104,7 @@ fun CountScreen(state: CountScreenUiState = CountScreenUiState(0, longestStreak 
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Text(
-                    text = "Current winning time: 00:00:00",
+                    text = "Current winning time: ${state.currentTime.formatted()}",
                     style = MaterialTheme.typography.bodyLarge
                 )
                 Spacer(modifier = Modifier.height(16.dp))
