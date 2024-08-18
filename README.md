@@ -3,12 +3,15 @@
 NF Kanban Board:
 
 IN PROGRESS:
-1) Create the main screen with mocks **(actual goal)**;
+
+1) Create the main screen with mocks;
 
 TODO: 
+
 2) Create a widget in user home screen;
 
 BACKLOG:
+
 3) Signup feature;
 4) Signin feature;
 5) Generate motivational phrases with Gemini;
