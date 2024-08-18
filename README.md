@@ -20,4 +20,5 @@ BACKLOG:
 GIT BRANCHES
 
 main -> untoachable;
+
 develop -> we'll actually code here, only merging at main when we have a stable feature;
