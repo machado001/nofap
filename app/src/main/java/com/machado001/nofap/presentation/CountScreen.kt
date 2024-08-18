@@ -42,10 +42,9 @@ fun CountScreenRoot() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CountScreen() {
+fun CountScreen(state: CountScreenUiState = CountScreenUiState(0, longestStreak = 54)) {
 
     val context = LocalContext.current
-    val state = CountScreenUiState(0, longestStreak = 54)
 
     var showDialog by remember { mutableStateOf(false) }
 
@@ -53,7 +52,9 @@ fun CountScreen() {
         LostAlertDialog(onClose = { showDialog = false })
     }
     Scaffold(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(PaddingValues(16.dp)),
         topBar = {
             TopAppBar(
                 title = { Text("No Fap!") },
@@ -90,7 +91,6 @@ fun CountScreen() {
                     text = "You're just starting. Don't be a loser. Keep Strong \uD83D\uDDFF",
                     style = MaterialTheme.typography.bodyLarge
                 )
-
             }
             Column(
                 modifier = Modifier
@@ -117,12 +117,6 @@ fun CountScreen() {
         }
     }
 }
-
-data class CountScreenUiState(
-    val currentStreak: Int = 0,
-    val longestStreak: Int = 0,
-    val currentTime: Long = 0,
-)
 
 
 @Preview
