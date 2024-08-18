@@ -5,10 +5,10 @@ NF Kanban Board:
 IN PROGRESS:
 
 1) Create the main screen with mocks;
+2) Create a widget in user home screen;
 
 TODO: 
 
-2) Create a widget in user home screen;
 
 BACKLOG:
 
@@ -27,3 +27,4 @@ main -> untoachable;
 develop -> we'll actually code here, only merging at main when we have a stable feature;
 
 feature/mainScreen -> related to NF-1
+feature/widget -> related to NF-2
